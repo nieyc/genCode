@@ -1,4 +1,4 @@
-package com.github.nyc;
+package com.github.nyc.util;
 
 import freemarker.template.Configuration;
 import freemarker.template.TemplateExceptionHandler;
@@ -11,18 +11,20 @@ import java.io.IOException;
  * @Date:created in 15:52 2018/5/4
  * @Description
  **/
-public class freeMakerUtil {
+public class FreeMakerUtil {
 
-    private  static freeMakerUtil instance=null;
 
     private static Configuration configuration =null;
 
-    //private static String filePath="D:\\workspace\\java\\freemaker\\src\\main\\templete";
-
-    private freeMakerUtil(){
+    private FreeMakerUtil(){
 
     }
 
+    /**
+     @Author:nieyc
+     @Description: 返回一个单例对象
+     @Date:17:33 2018/5/5
+     **/
     public static synchronized Configuration getInstance(String filePath) {
         if(configuration==null) {
             configuration=new Configuration(Configuration.VERSION_2_3_28);

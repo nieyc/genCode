@@ -1,4 +1,4 @@
-package com.github.nyc.model;
+package model;
 
 /**
  * @author:nieyc

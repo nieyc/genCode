@@ -1,5 +1,6 @@
 package com.github.nyc;
 
+import com.github.nyc.util.FreeMakerUtil;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -22,11 +23,11 @@ import java.util.Map;
 
 public class freeMarkerTest {
 
-    String filePath="D:\\workspace\\java\\freemaker\\src\\main\\templete";
+    String filePath="C:\\workspace\\genCode\\src\\test\\java\\templates";
 
     @Test
     public  void createHtml() throws TemplateException {
-        Configuration cfg= freeMakerUtil.getInstance(filePath);
+        Configuration cfg= FreeMakerUtil.getInstance(filePath);
         Template template = null;
         try {
             template = cfg.getTemplate("static.html");

@@ -1,9 +1,10 @@
 package com.github.nyc;
 
-import com.github.nyc.model.Product;
+import com.github.nyc.util.FreeMakerUtil;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import model.Product;
 import org.junit.Test;
 
 import java.io.FileOutputStream;
@@ -20,10 +21,10 @@ import java.util.Map;
  * @Description:官网例子
  **/
 public class OfficialTest {
-    String filePath="D:\\workspace\\java\\freemaker\\src\\main\\templete";
+    String filePath="C:\\workspace\\genCode\\src\\test\\java\\templates";
     @Test
     public void create(){
-        Configuration cfg= freeMakerUtil.getInstance(filePath);
+        Configuration cfg= FreeMakerUtil.getInstance(filePath);
         Template template = null;
         try {
             template = cfg.getTemplate("test.ftlh");
