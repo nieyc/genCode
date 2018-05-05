@@ -38,7 +38,12 @@ public class CodeGenerateUtils {
 
 
 
+
     public void generate() throws Exception{
+        File   dirFile= new File(diskPath);
+        if(!dirFile.exists()){
+            dirFile.mkdir();
+        }
         try {
             Connection connection = DbUtil.getConnection();
             DatabaseMetaData databaseMetaData = connection.getMetaData();
