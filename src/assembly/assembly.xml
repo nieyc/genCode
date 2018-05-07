@@ -14,10 +14,16 @@
 			<directory>${project.basedir}/src/bin</directory>
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
-		<!-- <fileSet>
+		<fileSet>
 			<directory>${project.basedir}/src/main/resources</directory>
-			<outputDirectory>/</outputDirectory>
-		</fileSet> -->
+			<outputDirectory>/resources</outputDirectory>
+		</fileSet>
+
+		<fileSet>
+			<directory>${project.basedir}/templates</directory>
+			<outputDirectory>/templates</outputDirectory>
+		</fileSet>
+
 		<fileSet>
 			<directory>${project.build.directory}/classes</directory>
 			<outputDirectory>/classes</outputDirectory>

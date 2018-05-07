@@ -126,7 +126,9 @@ public class CodeGenerateUtils {
     }
 
     private void generateFileByTemplate(final String templateName,File file,Map<String,Object> dataMap) throws Exception{
-        Configuration cfg= FreeMakerUtil.getInstance("C:\\workspace\\genCode\\src\\main\\templates");
+        String path=System.getProperty("user.dir")+"\\templates";
+        //System.out.println(path);
+        Configuration cfg= FreeMakerUtil.getInstance(path);
         Template template=  cfg.getTemplate(templateName);
         FileOutputStream fos = new FileOutputStream(file);
         dataMap.put("table_name_small",tableName);
@@ -141,7 +143,9 @@ public class CodeGenerateUtils {
     }
 
 
+    public static void main(String[] args) {
 
+    }
 
 
 
