@@ -5,13 +5,11 @@
 <mapper namespace="${package_name}.dao.${table_name}Dao">
 
     <resultMap id="${table_name}Map" type="${package_name}.pojo.${table_name}">
-
         <#if model_column?exists>
             <#list model_column as model>
                 <result property = "${model.changeColumnName?uncap_first}" column = "${model.columnName}"/>
             </#list>
         </#if>
-
     </resultMap>
 
 
@@ -63,7 +61,7 @@
    </select>
 
 
-    <select id="get${table_name}Count"   resultClass="int">
+    <select id="get${table_name}Count"   resultType="int">
         select count(*) from ${table_name_small}
     </select>
 

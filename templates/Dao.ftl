@@ -13,7 +13,7 @@ public interface ${table_name}Dao {
 
     public void add${table_name}(${table_name} ${table_name_obj});
 
-    public void update${table_name}(${table_name} ${table_name_obj});
+    public void update${table_name}ById(${table_name} ${table_name_obj});
 
     public void delete${table_name}ById(String id);
 

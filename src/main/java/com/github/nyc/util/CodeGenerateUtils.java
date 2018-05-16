@@ -111,7 +111,7 @@ public class CodeGenerateUtils {
 
     private void generatSeiFile(ResultSet resultSet) throws Exception{
         final String suffix = ".java";
-        final String path = diskPath + "I"+changeTableName +"Sevice"+suffix;
+        final String path = diskPath + "I"+changeTableName +"Service"+suffix;
         final String templateName = "Service.ftl";
         File mapperFile = new File(path);
         generateFileByTemplate(templateName,mapperFile,dataMap);
@@ -119,7 +119,7 @@ public class CodeGenerateUtils {
 
     private void generatSeiviceImplFile(ResultSet resultSet) throws Exception{
         final String suffix = ".java";
-        final String path = diskPath +changeTableName +"SeviceImpl"+suffix;
+        final String path = diskPath +changeTableName +"ServiceImpl"+suffix;
         final String templateName = "ServiceImpl.ftl";
         File mapperFile = new File(path);
         generateFileByTemplate(templateName,mapperFile,dataMap);

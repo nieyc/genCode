@@ -3,7 +3,7 @@ package ${package_name}.sei;
 import java.util.List;
 import ${package_name}.pojo.${table_name};
 
-public interface IExBasicInfoService {
+public interface  I${table_name}Service {
 
 	/**
 	 * 查询所有记录

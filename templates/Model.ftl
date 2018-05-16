@@ -11,29 +11,34 @@ import java.util.List;
 
 public class ${table_name} implements Serializable {
 
+private static final long serialVersionUID = 1L;
+
 <#if model_column?exists>
     <#list model_column as model>
         /**
         * ${model.columnComment!}
         */
-        <#if (model.columnType == 'VARCHAR' || model.columnType == 'TEXT')>
+        <#if (model.columnType == 'VARCHAR' || model.columnType == 'TEXT'|| model.columnType == 'CHAR')>
          private String ${model.changeColumnName?uncap_first};
         </#if>
         <#if (model.columnType == 'INT')||(model.columnType == 'BIGINT')>
          private int ${model.changeColumnName?uncap_first};
         </#if>
-        <#if model.columnType == 'TIMESTAMP'|| model.columnType=='DATETIME' >
+        <#if model.columnType == 'TIMESTAMP'|| model.columnType=='DATETIME'|| model.columnType=='DATE' >
         private Date ${model.changeColumnName?uncap_first};
         </#if>
         <#if model.columnType == 'DOUBLE' >
                 private Double ${model.changeColumnName?uncap_first};
+        </#if>
+        <#if model.columnType == 'FLOAT' >
+                private Float ${model.changeColumnName?uncap_first};
         </#if>
     </#list>
 </#if>
 
 <#if model_column?exists>
     <#list model_column as model>
-     <#if (model.columnType == "VARCHAR" || model.columnType == 'TEXT')>
+     <#if (model.columnType == "VARCHAR" || model.columnType == 'TEXT'|| model.columnType == 'CHAR')>
         public String get${model.changeColumnName}() {
             return this.${model.changeColumnName?uncap_first};
         }
@@ -44,16 +49,16 @@ public class ${table_name} implements Serializable {
      </#if>
 
     <#if (model.columnType == "INT"||(model.columnType == 'BIGINT') )>
-        public String get${model.changeColumnName}() {
+        public int get${model.changeColumnName}() {
             return this.${model.changeColumnName?uncap_first};
         }
 
-        public void set${model.changeColumnName}(String ${model.changeColumnName?uncap_first}) {
+        public void set${model.changeColumnName}(int ${model.changeColumnName?uncap_first}) {
             this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
         }
     </#if>
 
-    <#if model.columnType == 'TIMESTAMP'|| model.columnType=='DATETIME' >
+    <#if model.columnType == 'TIMESTAMP'|| model.columnType=='DATETIME'|| model.columnType=='DATE' >
         public Date get${model.changeColumnName}() {
             return this.${model.changeColumnName?uncap_first};
         }
@@ -69,6 +74,16 @@ public class ${table_name} implements Serializable {
         }
 
         public void set${model.changeColumnName}(Double ${model.changeColumnName?uncap_first}) {
+            this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
+        }
+        </#if>
+
+        <#if model.columnType == 'FLOAT' >
+        public Float get${model.changeColumnName}() {
+            return this.${model.changeColumnName?uncap_first};
+        }
+
+        public void set${model.changeColumnName}(Float ${model.changeColumnName?uncap_first}) {
             this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
         }
         </#if>

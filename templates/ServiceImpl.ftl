@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import ${package_name}.pojo.${table_name};
 import ${package_name}.dao.${table_name}Dao;
+import ${package_name}.sei.I${table_name}Service;
 
 
 
@@ -32,7 +33,7 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 
     @Override
     public void update${table_name}(${table_name} ${table_name_obj}) {
-          ${table_name_obj}Dao.update${table_name}(${table_name_obj});
+          ${table_name_obj}Dao.update${table_name}ById(${table_name_obj});
     }
 
     @Override
