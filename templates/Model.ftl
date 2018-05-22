@@ -33,6 +33,9 @@ private static final long serialVersionUID = 1L;
         <#if model.columnType == 'FLOAT' >
                 private Float ${model.changeColumnName?uncap_first};
         </#if>
+        <#if model.columnType == 'DECIMAL' >
+                private BigDecimal ${model.changeColumnName?uncap_first};
+        </#if>
     </#list>
 </#if>
 
@@ -84,6 +87,16 @@ private static final long serialVersionUID = 1L;
         }
 
         public void set${model.changeColumnName}(Float ${model.changeColumnName?uncap_first}) {
+            this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
+        }
+        </#if>
+
+        <#if model.columnType == 'DECIMAL' >
+        public BigDecimal get${model.changeColumnName}() {
+            return this.${model.changeColumnName?uncap_first};
+        }
+
+        public void set${model.changeColumnName}(BigDecimal ${model.changeColumnName?uncap_first}) {
             this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
         }
         </#if>
